@@ -88,7 +88,7 @@ Set all environmental variables before deployment if required by the platform.
 [![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Malith-Rukshan/telegram-card)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Malith-Rukshan/telegram-card)
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/xAf8hY?referralCode=jC4ZQ_)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/template/v2vpPI?referralCode=jC4ZQ_)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Malith-Rukshan/telegram-card)
 
 ## 💻 Local Development
@@ -144,8 +144,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Feedback and suggestions are always welcome! Feel free to open issues or submit pull requests to help improve the Telegram Card widget.
-
----
 
 ## 🌟 Support and Community
 
