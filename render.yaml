@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: telegram-card
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18

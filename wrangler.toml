@@ -1,0 +1,16 @@
+name = "telegram-card"
+type = "javascript"
+compatibility_date = "2023-10-30"
+
+[build]
+command = "npm run build"
+cwd = "."
+watch_dir = "src"
+
+[env.production]
+name = "telegram-card-prod"
+route = "*telegram-card.pages.dev/*"
+zone_id = ""
+
+[site]
+bucket = ".next"

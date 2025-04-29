@@ -1,0 +1,15 @@
+{
+    "name": "Telegram Card Widget",
+    "description": "Beautiful dynamic cards for Telegram profiles, channels, and groups",
+    "repository": "https://github.com/Malith-Rukshan/telegram-card",
+    "logo": "https://github.com/user-attachments/assets/39b7b5d1-308e-462e-b414-b7662bf92341",
+    "keywords": ["telegram", "card", "widget", "nextjs", "vercel", "og-image"],
+    "engines": {
+      "node": "18.x"
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ]
+  }
