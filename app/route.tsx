@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
               borderRadius: '24px',
               width: '600px',
               height: '180px',
-              boxShadow: `0 16px 40px ${shadowColor}`,
+              boxShadow: `0 12px 28px ${shadowColor}`,
               color: textColor,
               fontFamily: 'Inter, sans-serif',
               position: 'relative',
