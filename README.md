@@ -1,5 +1,5 @@
 <p style="text-align:center;" align="center">
-  <img align="center" src="" alt="Telegram Card Widget" width="300px" height="300px"/>
+  <img align="center" src="https://github.com/user-attachments/assets/39b7b5d1-308e-462e-b414-b7662bf92341" alt="Telegram Card Widget" width="300px" height="300px"/>
 </p>
 <h1 align="center">Telegram Card - Widget</h1>
 <div align='center'>
@@ -44,23 +44,23 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 
 ## 📸 Examples
 
-### Theme Support
+### 🎨 Theme Support
 
-#### Light Theme
+#### 🌝 Light Theme
 ![Channel Light Theme](https://telegram-card.vercel.app/?username=Premium&theme=light)
 
-#### Dark Theme
+#### 🌚 Dark Theme
 ![Channel Dark Theme](https://telegram-card.vercel.app/?username=Premium&theme=dark)
 
-### Source Types Support
+### 🗂 Source Types Support
 
-#### Channel
+#### 🔔 Channel
 ![Telegram Channel](https://telegram-card.vercel.app/?username=SingleDevelopers)
 
-#### Bot
+#### 🤖 Bot
 ![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot)
 
-#### Group
+#### 👥 Group
 ![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store)
 
 ## 📦 Getting Started
