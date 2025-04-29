@@ -57,6 +57,8 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 #### 🔔 Channel
 ![Telegram Channel](https://telegram-card.vercel.app/?username=SingleDevelopers)
 
+![Telegram Channel](https://telegram-card.vercel.app/?username=durov)
+
 #### 🤖 Bot
 ![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot)
 
@@ -64,6 +66,34 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 ![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store)
 
 ## 📦 Getting Started
+
+### 🚀 Quick Deploy
+
+The fastest way to get your own Telegram Card Widget is to deploy it directly to one of these platforms:
+
+#### ✅ Serverless - Free
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Malith-Rukshan/telegram-card)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Malith-Rukshan/telegram-card)
+
+1. Click one of the deploy buttons above
+2. Follow the platform's setup instructions
+3. Your Telegram Card Widget will be online in minutes!
+4. Use it by visiting: `https://your-deployment-url/?username=YourTelegramUsername`
+
+## 🚀 Deploy on PaaS
+
+Set all environmental variables before deployment if required by the platform.
+
+[![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Malith-Rukshan/telegram-card)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Malith-Rukshan/telegram-card)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/xAf8hY?referralCode=jC4ZQ_)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Malith-Rukshan/telegram-card)
+
+## 💻 Local Development
+
+If you want to run the project locally or customize it before deploying:
 
 ### Prerequisites
 
@@ -94,12 +124,6 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 
 4. Open [http://localhost:3000/?username=SingleDevelopers](http://localhost:3000/?username=SingleDevelopers) to see your card!
 
-## 🚀 Deploy Your Own
-
-Deploy your own version of the Telegram Card using Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMalith-Rukshan%2Ftelegram-card)
-
 ## 🌐 Use Cases
 
 - Add to your GitHub profile README
@@ -115,7 +139,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with [Next.js](https://nextjs.org/)
 - OG Images powered by [@vercel/og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
-- Inspired by GitHub profile cards
+- Crafted specifically for developers to showcase their Telegram presence
 
 ## 🤝 Contributing
 
