@@ -15,8 +15,6 @@
   - Showcase your Telegram presence anywhere with beautiful, themed cards -
   <br/>
   <sup><sub>Powered by Next.js OG Image API ツ</sub></sup>
-  <br />
-  <br />
 </div>
 
 ## ✨ Features
