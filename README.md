@@ -18,7 +18,6 @@
   <br />
   <br />
 </div>
-</br>
 
 ## ✨ Features
 
