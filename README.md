@@ -60,7 +60,7 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 ![Telegram Channel](https://telegram-card.vercel.app/?username=durov)
 
 #### 🤖 Bot
-![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot)
+![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot&theme=light)
 
 #### 👥 Group
 ![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store)
