@@ -56,10 +56,10 @@ Example usage for Github Profile : https://github.com/Malith-Rukshan#-connect-wi
 ### 🎨 Theme Support
 
 #### 🌝 Light Theme
-![Channel Light Theme](https://telegram-card.vercel.app/?username=Premium&theme=light)
+![Channel Light Theme](https://telegram-card.vercel.app/?username=Premium&theme=light&random)
 
 #### 🌚 Dark Theme
-![Channel Dark Theme](https://telegram-card.vercel.app/?username=Premium&theme=dark)
+![Channel Dark Theme](https://telegram-card.vercel.app/?username=Premium&theme=dark&random)
 
 ### 🗂 Source Types Support
 
