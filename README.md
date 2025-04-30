@@ -39,7 +39,19 @@ https://telegram-card.vercel.app/?username=SingleDevelopers
 https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 ```
 
+### For Github Readme.md
+
+```html
+<img src="https://telegram-card.vercel.app/?username=SingleDevelopers" alt="@SingleDevelopers" style="width: 300px; max-width: 100%; height: auto;" />
+```
+or
+```markdown
+![SingleDevelopers](https://telegram-card.vercel.app/?username=SingleDevelopers)
+```
+
 ## 📸 Examples
+
+Example usage for Github Profile : https://github.com/Malith-Rukshan#-connect-with-me
 
 ### 🎨 Theme Support
 
@@ -52,15 +64,15 @@ https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 ### 🗂 Source Types Support
 
 #### 🔔 Channel
-![Telegram Channel](https://telegram-card.vercel.app/?username=SingleDevelopers)
+![Telegram Channel](https://telegram-card.vercel.app/?username=SingleDevelopers&theme=light)
 
-![Telegram Channel](https://telegram-card.vercel.app/?username=durov)
+![Telegram Channel](https://telegram-card.vercel.app/?username=durov&theme=light)
 
 #### 🤖 Bot
 ![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot&theme=light)
 
 #### 👥 Group
-![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store)
+![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store&theme=light)
 
 | ![Preivew Item](https://telegram-card.vercel.app/?username=AlphaV2ray&theme=light) | ![Preivew Item](https://telegram-card.vercel.app/?username=SingleMusicX) |
 |------------|-----------|
