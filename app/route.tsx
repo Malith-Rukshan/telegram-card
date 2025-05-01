@@ -251,6 +251,10 @@ export async function GET(request: NextRequest) {
         width: 700,
         height: 250,
         emoji: 'fluent',
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Content-Type': 'image/png',
+        }
       }
     );
   }
