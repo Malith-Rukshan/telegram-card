@@ -54,7 +54,7 @@ export async function GET(request: NextRequest) {
     const shadowColor = isDark ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.06)';
 
     // Generate the image response
-    return new ImageResponse(
+    const imageResponse = new ImageResponse(
       (
         <div 
           style={{
@@ -195,6 +195,18 @@ export async function GET(request: NextRequest) {
         emoji: 'fluent',
       },
     );
+    const arrayBuffer = await imageResponse.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const headers = new Headers();
+    headers.set('Content-Type', 'image/png');
+    headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    headers.set('Pragma', 'no-cache');
+    headers.set('Expires', '0');
+    return new Response(buffer, {
+      status: 200,
+      headers: headers,
+    });
+
   } catch (error) {
     console.error('Error generating Telegram card:', error);
     
