@@ -252,7 +252,9 @@ export async function GET(request: NextRequest) {
         height: 250,
         emoji: 'fluent',
         headers: {
-          'Cache-Control': 'no-cache',
+          'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0',
           'Content-Type': 'image/png',
         }
       }
