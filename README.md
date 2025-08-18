@@ -39,6 +39,23 @@ https://telegram-card.vercel.app/?username=SingleDevelopers
 https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
 ```
 
+### Advanced Customization
+
+You can customize the colors and font of the card by passing the following query parameters:
+
+- `bgColor`: The background color of the card.
+- `textColor`: The color of the text.
+- `subtleTextColor`: The color of the subtle text.
+- `extraColor`: The color of the extra text.
+- `shadowColor`: The color of the box shadow.
+- `fontFamily`: The font family of the text.
+
+**Example:**
+
+```
+https://telegram-card.vercel.app/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui
+```
+
 ### For Github Readme.md
 
 ```html
@@ -60,6 +77,10 @@ Example usage for Github Profile : https://github.com/Malith-Rukshan#-connect-wi
 
 #### 🌚 Dark Theme
 ![Channel Dark Theme](https://telegram-card.vercel.app/?username=Premium&theme=dark&random)
+
+#### 🎨 Custom Theme
+![Telegram Channel](https://telegram-card.vercel.app/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui)
+
 
 ### 🗂 Source Types Support
 
