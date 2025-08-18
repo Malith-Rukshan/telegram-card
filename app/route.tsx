@@ -140,20 +140,41 @@ export async function GET(request: NextRequest) {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-                <span
-                  style={{
-                    fontSize: 30,
-                    fontWeight: 700,
-                    textOverflow: 'ellipsis',
-                    overflow: 'hidden',
-                    whiteSpace: 'nowrap',
-                    fontFamily: 'Arial',
-                    letterSpacing: '-0.5px',
-                    maxWidth: '380px',
-                  }}
-                >
-                  {result.title}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', maxWidth: '380px' }}>
+                  <span
+                    style={{
+                      fontSize: 30,
+                      fontWeight: 700,
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                      whiteSpace: 'nowrap',
+                      fontFamily: 'Arial',
+                      letterSpacing: '-0.5px',
+                    }}
+                  >
+                    {result.title}
+                  </span>
+                  {result.isVerified && (
+                    <svg
+                      width="30"
+                      height="30"
+                      viewBox="0 0 26 26"
+                      style={{
+                        marginLeft: '8px',
+                        verticalAlign: '-4px',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <path d="m6 6h12v12h-12z" fill="#fff"/>
+                      <path 
+                        clipRule="evenodd" 
+                        d="m14.38 1.51 1.82 1.82c.37.37.86.57 1.38.57h2.57c1.01 0 1.85.77 1.94 1.76l.01.19v2.57c0 .52.21 1.01.57 1.38l1.82 1.82c.71.71.76 1.84.13 2.61l-.13.15-1.82 1.82c-.37.37-.57.86-.57 1.38v2.57c0 1.01-.77 1.85-1.76 1.94l-.19.01h-2.57c-.52 0-1.01.21-1.38.57l-1.82 1.82c-.71.71-1.84.76-2.61.13l-.15-.13-1.82-1.82c-.37-.37-.86-.57-1.38-.57h-2.57c-1.01 0-1.85-.77-1.94-1.76l-.01-.19v-2.57c0-.52-.21-1.01-.57-1.38l-1.82-1.82c-.71-.71-.76-1.84-.13-2.61l.13-.15 1.82-1.82c.37-.37.57-.86.57-1.38v-2.57c0-1.08.87-1.95 1.95-1.95h2.57c.52 0 1.01-.21 1.38-.57l1.82-1.82c.76-.76 2-.76 2.76 0zm3.2 8.05c-.43-.34-1.03-.31-1.42.06l-.1.11-4.45 5.56-1.75-1.75-.11-.1c-.42-.32-1.03-.29-1.42.1s-.42.99-.1 1.42l.1.11 2.6 2.6.11.1c.42.32 1.02.29 1.4-.08l.1-.11 5.2-6.5.08-.12c.27-.46.17-1.05-.25-1.4z" 
+                        fill="#1c93e3" 
+                        fillRule="evenodd"
+                      />
+                    </svg>
+                  )}
+                </div>
               </div>
 
               <span

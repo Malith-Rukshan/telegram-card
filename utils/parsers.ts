@@ -47,7 +47,21 @@ export function extractExtraInfo(doc: Document, type: SoruceType): string | null
 }
 
 export function extractTitle(doc: Document): string | null {
-    return extractTextContent(doc, 'div.tgme_page_title');
+    const titleElement = doc.querySelector('div.tgme_page_title');
+    if (!titleElement) return null;
+    
+    // Get text content from span elements only, excluding the verified icon
+    const titleSpan = titleElement.querySelector('span[dir="auto"]');
+    if (titleSpan) {
+        return titleSpan.textContent?.trim() || null;
+    }
+    
+    // Fallback: get all text content and remove common verification symbols
+    const fullText = titleElement.textContent?.trim();
+    if (!fullText) return null;
+    
+    // Remove verification checkmarks and other symbols
+    return fullText.replace(/[✔✓☑]/g, '').trim();
 }
 
 export function extractDescription(doc: Document): string | null {
@@ -56,4 +70,8 @@ export function extractDescription(doc: Document): string | null {
 
 export function extractImage(doc: Document): string | null {
     return doc.querySelector('img.tgme_page_photo_image')?.getAttribute('src') || null;
+}
+
+export function extractVerifiedStatus(doc: Document): boolean {
+    return doc.querySelector('div.tgme_page_title i.verified-icon') !== null;
 }

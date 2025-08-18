@@ -18,7 +18,8 @@ import {
     extractDescription,
     extractExtraInfo,
     extractImage,
-    extractTitle
+    extractTitle,
+    extractVerifiedStatus
 } from './parsers';
 import { SoruceType } from '@/types/enums';
 import { get, set } from './cache';
@@ -32,6 +33,7 @@ interface ScrapeResult {
     description: string | null;
     image: string;
     extra: string | null;
+    isVerified: boolean;
 }
 
 async function fetchAndParseHtml(username: string): Promise<Document> {
@@ -69,6 +71,7 @@ async function scrapeAndCache(username: string): Promise<ScrapeResult> {
 
         const type = determineSourceType(doc);
         const extra = extractExtraInfo(doc, type);
+        const isVerified = extractVerifiedStatus(doc);
 
         const result: ScrapeResult = {
             type,
@@ -77,6 +80,7 @@ async function scrapeAndCache(username: string): Promise<ScrapeResult> {
             description,
             image,
             extra,
+            isVerified,
         };
 
         set(username, result, CACHE_TTL);
