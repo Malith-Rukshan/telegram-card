@@ -59,9 +59,7 @@ export async function GET(request: NextRequest) {
 
     const headers = new Headers();
     headers.set('Content-Type', 'image/png');
-    headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    headers.set('Pragma', 'no-cache');
-    headers.set('Expires', '0');
+    headers.set('Cache-Control', 'public, max-age=7200');
     headers.set('Content-Security-Policy', "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; font-src 'self'");
 
     // Generate the image response
@@ -224,9 +222,7 @@ export async function GET(request: NextRequest) {
 
     const headers = new Headers();
     headers.set('Content-Type', 'image/png');
-    headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    headers.set('Pragma', 'no-cache');
-    headers.set('Expires', '0');
+    headers.set('Cache-Control', 'public, max-age=7200');
     headers.set('Content-Security-Policy', "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; font-src 'self'");
 
     // Return a fallback image response
