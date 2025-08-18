@@ -20,6 +20,8 @@ import { NextRequest } from 'next/server'
 import { ImageResponse } from 'next/og';
 import scrapeTelegram from "@/utils/scrapeTelegram";
 import { TelegramScrapeError, UserNotFoundError } from '@/utils/errors';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 function sanitizeUsername(username: string): string {
   return username.replace(/[^a-zA-Z0-9_]/g, ' ');
@@ -34,14 +36,24 @@ export async function GET(request: NextRequest) {
     const theme = searchParams.get('theme') || 'light';
     const isDark = theme === 'dark';
 
-    // If username is not provided, redirect to Github repository
+    // If username is not provided, show homepage
     if (!username) {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: 'https://github.com/Malith-Rukshan/telegram-card',
-        },
-      });
+      try {
+        const htmlPath = join(process.cwd(), 'public', 'index.html');
+        const htmlContent = readFileSync(htmlPath, 'utf8');
+        
+        const headers = new Headers();
+        headers.set('Content-Type', 'text/html');
+        headers.set('Cache-Control', 'public, max-age=3600');
+
+        return new Response(htmlContent, {
+          status: 200,
+          headers: headers,
+        });
+      } catch (error) {
+        // Fallback if file doesn't exist
+        return new Response('Homepage not found', { status: 404 });
+      }
     }
 
     const sanitizedUsername = sanitizeUsername(username);

@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Telegram Card Generator - Beautiful Dynamic Cards for Telegram Profiles, Channels & Groups</title>
+    <meta name="title" content="Telegram Card Generator - Beautiful Dynamic Cards for Telegram Profiles, Channels & Groups">
+    <meta name="description" content="Generate stunning, customizable cards for Telegram profiles, channels, groups, and bots. Perfect for GitHub READMEs, websites, and social media. Free OG image generator with dark/light themes and custom colors.">
+    <meta name="keywords" content="telegram card, telegram profile card, telegram channel card, telegram bot card, github readme, og image generator, social media cards, telegram badge, profile badge, channel badge">
+    <meta name="author" content="Malith Rukshan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://telegram-card.vercel.app/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://telegram-card.vercel.app/">
+    <meta property="og:title" content="Telegram Card Generator - Beautiful Dynamic Cards for Telegram Profiles">
+    <meta property="og:description" content="Generate stunning, customizable cards for Telegram profiles, channels, groups, and bots. Perfect for GitHub READMEs, websites, and social media.">
+    <meta property="og:image" content="https://telegram-card.vercel.app/?username=SingleDevelopers&theme=light">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="250">
+    <meta property="og:site_name" content="Telegram Card Generator">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://telegram-card.vercel.app/">
+    <meta property="twitter:title" content="Telegram Card Generator - Beautiful Dynamic Cards">
+    <meta property="twitter:description" content="Generate stunning, customizable cards for Telegram profiles, channels, groups, and bots. Perfect for GitHub READMEs.">
+    <meta property="twitter:image" content="https://telegram-card.vercel.app/?username=SingleDevelopers&theme=light">
+    <meta property="twitter:creator" content="@MalithRukshan">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#0088CC">
+    <meta name="application-name" content="Telegram Card Generator">
+    <meta name="apple-mobile-web-app-title" content="Telegram Card">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Telegram Card Generator",
+      "description": "Generate beautiful, customizable cards for Telegram profiles, channels, groups, and bots. Perfect for GitHub READMEs, websites, and social media.",
+      "url": "https://telegram-card.vercel.app/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Malith Rukshan",
+        "url": "https://github.com/Malith-Rukshan",
+        "sameAs": [
+          "https://t.me/MalithRukshan",
+          "https://github.com/Malith-Rukshan"
+        ]
+      },
+      "screenshot": "https://telegram-card.vercel.app/?username=SingleDevelopers&theme=light",
+      "featureList": [
+        "Generate cards for Telegram profiles, channels, groups, and bots",
+        "Dark and light theme support",
+        "Custom color schemes",
+        "Multiple font options",
+        "GitHub README integration",
+        "Fast OG image generation",
+        "Responsive design",
+        "Free to use"
+      ]
+    }
+    </script>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #0088CC, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .generator {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid #e1e5e9;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: #0088CC;
+        }
+        
+        .color-input-group {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .color-picker {
+            width: 50px !important;
+            height: 44px !important;
+            padding: 0 !important;
+            border: 2px solid #e1e5e9 !important;
+            border-radius: 8px !important;
+            cursor: pointer;
+            background: none;
+        }
+        
+        .color-picker::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        
+        .color-picker::-webkit-color-swatch {
+            border: none;
+            border-radius: 6px;
+        }
+        
+        .color-text-input {
+            flex: 1;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .advanced-toggle {
+            background: none;
+            border: none;
+            color: #0088CC;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .advanced-options {
+            display: none;
+            border-top: 1px solid #e1e5e9;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .advanced-options.show {
+            display: block;
+        }
+        
+        .theme-presets {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .theme-preset {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .theme-preset:hover {
+            border-color: #0088CC;
+        }
+        
+        .theme-preset.active {
+            border-color: #0088CC;
+            background: #0088CC;
+            color: white;
+        }
+        
+        .generate-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #0088CC;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-bottom: 1rem;
+        }
+        
+        .generate-btn:hover {
+            background: #006fa3;
+        }
+        
+        .generate-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .preview-section {
+            display: none;
+            margin-top: 2rem;
+            padding: 2rem;
+            border: 2px dashed #e1e5e9;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .preview-section.show {
+            display: block;
+        }
+        
+        .preview-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .url-copy {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .url-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background: #f8f9fa;
+        }
+        
+        .copy-btn {
+            padding: 0.75rem 1.5rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: #218838;
+        }
+        
+        .copy-btn.copied {
+            background: #20c997;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .feature {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #0088CC, #667eea);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .feature h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .feature p {
+            color: #666;
+        }
+        
+        .examples {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
+        }
+        
+        .examples h2 {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        
+        .example-item {
+            text-align: center;
+        }
+        
+        .example-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        
+        .example-item h4 {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+        
+        .example-item p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .usage {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+        
+        .usage h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            border-top: 1px solid #e1e5e9;
+            margin-top: 2rem;
+        }
+        
+        .footer a {
+            color: #0088CC;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container { 
+                padding: 1rem; 
+            }
+            h1 { 
+                font-size: 2rem; 
+            }
+            .form-row, .form-row-3 { 
+                grid-template-columns: 1fr; 
+            }
+            .features { 
+                grid-template-columns: 1fr; 
+            }
+            .theme-presets {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <img class="logo" src="https://github.com/user-attachments/assets/39b7b5d1-308e-462e-b414-b7662bf92341" alt="Telegram Card Generator Logo">
+            <h1>Telegram Card Generator</h1>
+            <p class="subtitle">Create stunning, customizable cards for Telegram profiles, channels, groups, and bots. Powered by Next.js OG Image API for lightning-fast generation. Perfect for GitHub READMEs, personal websites, and social media showcases.</p>
+        </div>
+
+        <div class="generator">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;">🎨 Generate Your Card</h2>
+            
+            <div class="form-group">
+                <label for="username">Telegram Username *</label>
+                <input type="text" id="username" placeholder="e.g., SingleDevelopers" required>
+            </div>
+
+            <div class="form-group">
+                <label>Theme Presets</label>
+                <div class="theme-presets">
+                    <button class="theme-preset active" data-preset="light">Light</button>
+                    <button class="theme-preset" data-preset="dark">Dark</button>
+                    <button class="theme-preset" data-preset="ocean">Ocean</button>
+                    <button class="theme-preset" data-preset="sunset">Sunset</button>
+                    <button class="theme-preset" data-preset="forest">Forest</button>
+                    <button class="theme-preset" data-preset="custom">Custom</button>
+                </div>
+            </div>
+
+            <button type="button" class="advanced-toggle" onclick="toggleAdvanced()">
+                ⚙️ Advanced Options
+            </button>
+
+            <div id="advanced-options" class="advanced-options">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="theme">Theme</label>
+                        <select id="theme">
+                            <option value="">Default (Light)</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fontFamily">Font Family</label>
+                        <select id="fontFamily">
+                            <option value="">Default</option>
+                            <option value="Inter, sans-serif">Inter</option>
+                            <option value="system-ui">System UI</option>
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="Helvetica, sans-serif">Helvetica</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="'Times New Roman', serif">Times New Roman</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="bgColor">Background Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="bgColorPicker" class="color-picker">
+                            <input type="text" id="bgColor" placeholder="rgba(255,255,255,1)" class="color-text-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="textColor">Text Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="textColorPicker" class="color-picker">
+                            <input type="text" id="textColor" placeholder="#000000" class="color-text-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="subtleTextColor">Subtle Text Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="subtleTextColorPicker" class="color-picker">
+                            <input type="text" id="subtleTextColor" placeholder="#666666" class="color-text-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="extraColor">Extra Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="extraColorPicker" class="color-picker">
+                            <input type="text" id="extraColor" placeholder="#3390D6" class="color-text-input">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shadowColor">Shadow Color</label>
+                        <div class="color-input-group">
+                            <input type="color" id="shadowColorPicker" class="color-picker">
+                            <input type="text" id="shadowColor" placeholder="rgba(0,0,0,0.06)" class="color-text-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="generate-btn" onclick="generateCard()">🚀 Generate Card</button>
+
+            <div id="preview-section" class="preview-section">
+                <h3>Your Generated Card</h3>
+                <img id="preview-image" class="preview-image" alt="Generated card preview">
+                <div class="url-copy">
+                    <input type="text" id="generated-url" class="url-input" readonly>
+                    <button class="copy-btn" onclick="copyUrl()">Copy URL</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h2>📸 Examples from the Community</h2>
+            <div class="example-grid">
+                <div class="example-item">
+                    <img src="/?username=SingleDevelopers&theme=light&random" alt="SingleDevelopers Light Theme">
+                    <h4>Channel - Light Theme</h4>
+                    <p>@SingleDevelopers</p>
+                </div>
+                <div class="example-item">
+                    <img src="/?username=Premium&theme=dark&random" alt="Premium Dark Theme">
+                    <h4>Channel - Dark Theme</h4>
+                    <p>@Premium</p>
+                </div>
+                <div class="example-item">
+                    <img src="/?username=durov&theme=light&random" alt="Pavel Durov">
+                    <h4>Personal Profile</h4>
+                    <p>@durov</p>
+                </div>
+                <div class="example-item">
+                    <img src="/?username=ReceiveSMSRobot&theme=light&random" alt="SMS Bot">
+                    <h4>Bot</h4>
+                    <p>@ReceiveSMSRobot</p>
+                </div>
+                <div class="example-item">
+                    <img src="/?username=SSH_Store&theme=light&random" alt="SSH Store Group">
+                    <h4>Group</h4>
+                    <p>@SSH_Store</p>
+                </div>
+                <div class="example-item">
+                    <img src="/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui&random" alt="Custom Theme">
+                    <h4>Custom Theme</h4>
+                    <p>@SL_Developers</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Beautiful Design</h3>
+                <p>Responsive cards with dark/light themes, custom color schemes, and multiple font options. Create cards that match your brand perfectly.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Powered by Next.js OG Image API with smart caching. Generate high-quality 700x250px cards in milliseconds, not seconds.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Universal Compatibility</h3>
+                <p>Works with Telegram channels, groups, bots, and personal profiles. Automatically displays subscriber counts, member counts, or monthly users.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔗</div>
+                <h3>Developer Friendly</h3>
+                <p>Perfect for GitHub README files, personal websites, and documentation. Simple URL-based API with extensive customization options.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🆓</div>
+                <h3>Completely Free</h3>
+                <p>Open source MIT licensed tool. No API keys required, no rate limits, no watermarks. Use it anywhere, anytime.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Easy Deployment</h3>
+                <p>Deploy your own instance on Vercel, Netlify, Railway, or any serverless platform. Full source code available on GitHub.</p>
+            </div>
+        </div>
+
+        <div class="usage">
+            <h2>🚀 Usage Guide & API Documentation</h2>
+            
+            <h3>📋 Basic Usage</h3>
+            <p>Simply add a Telegram username to generate a card:</p>
+            <div class="code-block">https://telegram-card.vercel.app/?username=SingleDevelopers</div>
+            
+            <h3>🎨 With Theme</h3>
+            <p>Choose between light and dark themes:</p>
+            <div class="code-block">https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark</div>
+            
+            <h3>📝 GitHub README Integration</h3>
+            <p>Perfect for showcasing your Telegram presence in README files:</p>
+            <div class="code-block">&lt;img src="https://telegram-card.vercel.app/?username=SingleDevelopers" alt="@SingleDevelopers" style="width: 300px;" /&gt;</div>
+            <p>Or using Markdown:</p>
+            <div class="code-block">![SingleDevelopers](https://telegram-card.vercel.app/?username=SingleDevelopers)</div>
+            
+            <h3>🎯 Advanced Customization</h3>
+            <p>Customize colors, fonts, and shadows to match your brand:</p>
+            <div class="code-block">https://telegram-card.vercel.app/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui</div>
+            
+            <h3>🔧 Available Parameters</h3>
+            <p>Customize your cards with these URL parameters:</p>
+            <ul style="margin: 1rem 0; padding-left: 2rem; color: #666;">
+                <li><strong>username</strong> - Telegram username (required)</li>
+                <li><strong>theme</strong> - light or dark</li>
+                <li><strong>bgColor</strong> - Background color (rgba or hex)</li>
+                <li><strong>textColor</strong> - Main text color</li>
+                <li><strong>subtleTextColor</strong> - Secondary text color</li>
+                <li><strong>extraColor</strong> - Accent color for counts</li>
+                <li><strong>shadowColor</strong> - Box shadow color</li>
+                <li><strong>fontFamily</strong> - Font family name</li>
+            </ul>
+            
+            <h3>🌟 Use Cases</h3>
+            <ul style="margin: 1rem 0; padding-left: 2rem; color: #666;">
+                <li>GitHub profile README showcases</li>
+                <li>Personal website integration</li>
+                <li>Social media profile links</li>
+                <li>Developer portfolio displays</li>
+                <li>Channel/group promotion materials</li>
+                <li>Bot documentation pages</li>
+            </ul>
+            
+            <p style="margin-top: 2rem;">
+                <a href="https://github.com/Malith-Rukshan/telegram-card" target="_blank" style="color: #0088CC; text-decoration: none; font-weight: 500;">
+                    📚 View complete documentation and source code on GitHub →
+                </a>
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>
+                © 2025 <a href="https://github.com/Malith-Rukshan" target="_blank">Malith Rukshan</a> | 
+                <a href="https://SingleDevelopers.com" target="_blank">Single Developers</a> | 
+                <a href="https://github.com/Malith-Rukshan/telegram-card" target="_blank">Open Source</a> | 
+                <a href="https://t.me/MalithRukshan" target="_blank">Contact</a>
+            </p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                Telegram Card Generator - Free MIT Licensed Tool for Developers | Powered by Next.js & Vercel
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Theme presets using actual API parameters
+        const themePresets = {
+            light: {
+                theme: 'light'
+            },
+            dark: {
+                theme: 'dark'
+            },
+            ocean: {
+                bgColor: 'rgba(30, 58, 138, 1)',
+                textColor: '#ffffff',
+                subtleTextColor: '#93c5fd',
+                extraColor: '#06b6d4',
+                shadowColor: 'rgba(0,0,0,0.3)',
+                fontFamily: 'system-ui'
+            },
+            sunset: {
+                bgColor: 'rgba(249, 115, 22, 1)',
+                textColor: '#ffffff',
+                subtleTextColor: '#fed7aa',
+                extraColor: '#fbbf24',
+                shadowColor: 'rgba(0,0,0,0.2)',
+                fontFamily: 'Arial, sans-serif'
+            },
+            forest: {
+                bgColor: 'rgba(22, 101, 52, 1)',
+                textColor: '#ffffff',
+                subtleTextColor: '#bbf7d0',
+                extraColor: '#22c55e',
+                shadowColor: 'rgba(0,0,0,0.3)',
+                fontFamily: 'Georgia, serif'
+            }
+        };
+
+        // Theme preset handling
+        document.querySelectorAll('.theme-preset').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.theme-preset').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const preset = this.dataset.preset;
+                if (preset !== 'custom' && themePresets[preset]) {
+                    applyPreset(themePresets[preset]);
+                } else if (preset === 'custom') {
+                    clearThemeInputs();
+                    // Auto-show advanced options when custom is selected
+                    const advancedOptions = document.getElementById('advanced-options');
+                    if (!advancedOptions.classList.contains('show')) {
+                        advancedOptions.classList.add('show');
+                        const toggle = document.querySelector('.advanced-toggle');
+                        toggle.textContent = '🔽 Hide Advanced Options';
+                    }
+                }
+            });
+        });
+
+        function applyPreset(preset) {
+            // Clear all custom fields first
+            clearThemeInputs();
+            
+            // Apply preset values
+            Object.keys(preset).forEach(key => {
+                const input = document.getElementById(key);
+                const picker = document.getElementById(key + 'Picker');
+                
+                if (input && preset[key] !== undefined) {
+                    input.value = preset[key];
+                    
+                    // Also update color picker if it's a hex color
+                    if (picker && preset[key].match(/^#([0-9A-Fa-f]{3}){1,2}$/)) {
+                        picker.value = preset[key];
+                    }
+                }
+            });
+        }
+
+        function clearThemeInputs() {
+            ['theme', 'bgColor', 'textColor', 'subtleTextColor', 'extraColor', 'shadowColor', 'fontFamily'].forEach(id => {
+                const input = document.getElementById(id);
+                const picker = document.getElementById(id + 'Picker');
+                
+                if (input) {
+                    input.value = '';
+                }
+                
+                // Reset color picker to default
+                if (picker) {
+                    picker.value = '#000000';
+                }
+            });
+        }
+
+        function toggleAdvanced() {
+            const options = document.getElementById('advanced-options');
+            options.classList.toggle('show');
+            
+            const toggle = document.querySelector('.advanced-toggle');
+            toggle.textContent = options.classList.contains('show') 
+                ? '🔽 Hide Advanced Options' 
+                : '⚙️ Advanced Options';
+        }
+
+        function generateCard() {
+            const username = document.getElementById('username').value.trim();
+            
+            if (!username) {
+                alert('Please enter a Telegram username');
+                return;
+            }
+
+            // Build URL parameters
+            const params = new URLSearchParams();
+            params.append('username', username);
+
+            // Get active preset
+            const activePreset = document.querySelector('.theme-preset.active').dataset.preset;
+            
+            // If using a built-in preset, apply its parameters
+            if (activePreset !== 'custom' && themePresets[activePreset]) {
+                const preset = themePresets[activePreset];
+                Object.keys(preset).forEach(key => {
+                    const value = preset[key];
+                    if (value !== undefined && value !== null && value !== '') {
+                        params.append(key, value);
+                    }
+                });
+            } else {
+                // Use advanced options for custom preset
+                const advancedFields = ['theme', 'bgColor', 'textColor', 'subtleTextColor', 'extraColor', 'shadowColor', 'fontFamily'];
+                
+                advancedFields.forEach(field => {
+                    const input = document.getElementById(field);
+                    if (input && input.value.trim()) {
+                        params.append(field, input.value.trim());
+                    }
+                });
+            }
+
+            // Generate URL and show preview
+            const baseUrl = window.location.origin;
+            const cardUrl = `${baseUrl}/?${params.toString()}`;
+            
+            // Show preview
+            const previewSection = document.getElementById('preview-section');
+            const previewImage = document.getElementById('preview-image');
+            const urlInput = document.getElementById('generated-url');
+            
+            previewImage.src = cardUrl + '&t=' + Date.now(); // Add timestamp to force reload
+            urlInput.value = cardUrl;
+            previewSection.classList.add('show');
+            
+            // Scroll to preview
+            previewSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyUrl() {
+            const urlInput = document.getElementById('generated-url');
+            const copyBtn = document.querySelector('.copy-btn');
+            
+            urlInput.select();
+            document.execCommand('copy');
+            
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            
+            setTimeout(() => {
+                copyBtn.textContent = 'Copy URL';
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        }
+
+        // Handle Enter key in username input
+        document.getElementById('username').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateCard();
+            }
+        });
+
+        // Color picker synchronization
+        function initColorPickers() {
+            const colorFields = ['bgColor', 'textColor', 'subtleTextColor', 'extraColor', 'shadowColor'];
+            
+            colorFields.forEach(field => {
+                const picker = document.getElementById(field + 'Picker');
+                const textInput = document.getElementById(field);
+                
+                if (picker && textInput) {
+                    // Color picker to text input
+                    picker.addEventListener('input', function() {
+                        textInput.value = this.value;
+                        switchToCustomPreset();
+                    });
+                    
+                    // Text input to color picker (only for hex colors)
+                    textInput.addEventListener('input', function() {
+                        const value = this.value.trim();
+                        // Only update picker if it's a valid hex color
+                        if (value.match(/^#([0-9A-Fa-f]{3}){1,2}$/)) {
+                            picker.value = value;
+                        }
+                        switchToCustomPreset();
+                    });
+                }
+            });
+        }
+        
+        function switchToCustomPreset() {
+            document.querySelectorAll('.theme-preset').forEach(b => b.classList.remove('active'));
+            document.querySelector('[data-preset="custom"]').classList.add('active');
+        }
+        
+        // Auto-switch to custom preset when advanced options are modified
+        document.querySelectorAll('#advanced-options input:not(.color-picker), #advanced-options select').forEach(input => {
+            input.addEventListener('input', function() {
+                switchToCustomPreset();
+            });
+        });
+        
+        // Initialize color pickers on page load
+        initColorPickers();
+    </script>
+</body>
+</html>
