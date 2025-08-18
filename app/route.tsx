@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
           status: 200,
           headers: headers,
         });
-      } catch (error) {
+      } catch {
         // Fallback if file doesn't exist
         return new Response('Homepage not found', { status: 404 });
       }
@@ -118,6 +118,7 @@ export async function GET(request: NextRequest) {
             >
               <img
                 src={result.image}
+                alt={`${result.username} profile picture`}
                 width={120}
                 height={120}
                 style={{
