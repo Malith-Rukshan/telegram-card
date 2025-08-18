@@ -1,0 +1,6 @@
+* linguist-detectable=true
+*.html linguist-documentation=true
+*.css linguist-vendored=true
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+public/index.html linguist-documentation=true
