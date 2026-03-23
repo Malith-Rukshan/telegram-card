@@ -1,0 +1,19 @@
+.git
+.gitignore
+.gitattributes
+.next
+node_modules
+npm-debug.log*
+
+# deployment configs not needed in image
+.vercel
+vercel.json
+netlify.toml
+render.yaml
+wrangler.toml
+
+# dev/editor
+.claude
+.DS_Store
+*.pem
+coverage

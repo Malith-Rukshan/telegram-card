@@ -126,6 +126,21 @@ Set all environmental variables before deployment if required by the platform.
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/template/v2vpPI?referralCode=jC4ZQ_)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Malith-Rukshan/telegram-card)
 
+## 🐳 Docker
+
+The quickest way to run a self-hosted instance:
+
+```bash
+docker compose up -d --build
+```
+
+Then visit [http://localhost:3000/?username=SingleDevelopers](http://localhost:3000/?username=SingleDevelopers).
+
+> To expose on a different port, set `EXPOSE_PORT` before running:
+> ```bash
+> EXPOSE_PORT=8080 docker compose up -d --build
+> ```
+
 ## 💻 Local Development
 
 If you want to run the project locally or customize it before deploying:
