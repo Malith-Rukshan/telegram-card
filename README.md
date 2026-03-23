@@ -6,7 +6,7 @@
 
 [![Next.JS](https://img.shields.io/badge/Next.JS-SSR-874fff?logo=nextdotjs&style=flat)](https://nextjs.org/)
 [![Telegram Public Data](https://img.shields.io/badge/Telegram-Card-0088CC?logo=telegram&style=flat)](https://t.me/SingleDevelopers)
-[![Hosted on Vercel](https://img.shields.io/badge/Vercel-Demo-3ea161?logo=vercel&style=flat)](https://telegram-card.vercel.app/?username=SingleDevelopers)
+[![Hosted on Vercel](https://img.shields.io/badge/Vercel-Demo-3ea161?logo=vercel&style=flat)](https://telegram-card.malith.dev/?username=SingleDevelopers)
 </div>
 
 <h4 align="center">✨ Beautiful dynamic cards for Telegram profiles, channels, and groups! 🚀</h4>
@@ -30,13 +30,13 @@
 ### Basic Usage
 
 ```
-https://telegram-card.vercel.app/?username=SingleDevelopers
+https://telegram-card.malith.dev/?username=SingleDevelopers
 ```
 
 ### With Theme Specification
 
 ```
-https://telegram-card.vercel.app/?username=SingleDevelopers&theme=dark
+https://telegram-card.malith.dev/?username=SingleDevelopers&theme=dark
 ```
 
 ### Advanced Customization
@@ -53,17 +53,17 @@ You can customize the colors and font of the card by passing the following query
 **Example:**
 
 ```
-https://telegram-card.vercel.app/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui
+https://telegram-card.malith.dev/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui
 ```
 
 ### For Github Readme.md
 
 ```html
-<img src="https://telegram-card.vercel.app/?username=SingleDevelopers" alt="@SingleDevelopers" style="width: 300px; max-width: 100%; height: auto;" />
+<img src="https://telegram-card.malith.dev/?username=SingleDevelopers" alt="@SingleDevelopers" style="width: 300px; max-width: 100%; height: auto;" />
 ```
 or
 ```markdown
-![SingleDevelopers](https://telegram-card.vercel.app/?username=SingleDevelopers)
+![SingleDevelopers](https://telegram-card.malith.dev/?username=SingleDevelopers)
 ```
 
 ## 📸 Examples
@@ -73,32 +73,32 @@ Example usage for Github Profile : https://github.com/Malith-Rukshan#-connect-wi
 ### 🎨 Theme Support
 
 #### 🌝 Light Theme
-![Channel Light Theme](https://telegram-card.vercel.app/?username=Premium&theme=light&random)
+![Channel Light Theme](https://telegram-card.malith.dev/?username=Premium&theme=light&random)
 
 #### 🌚 Dark Theme
-![Channel Dark Theme](https://telegram-card.vercel.app/?username=Premium&theme=dark&random)
+![Channel Dark Theme](https://telegram-card.malith.dev/?username=Premium&theme=dark&random)
 
 #### 🎨 Custom Theme
-![Telegram Channel](https://telegram-card.vercel.app/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui)
+![Telegram Channel](https://telegram-card.malith.dev/?username=SL_Developers&bgColor=rgba(30,41,59,1)&textColor=%23F1F5F9&subtleTextColor=%23CBD5E1&extraColor=%23F59E0B&shadowColor=rgba(0,0,0,0.2)&fontFamily=system-ui)
 
 
 ### 🗂 Source Types Support
 
 #### 🔔 Channel
-![Telegram Channel](https://telegram-card.vercel.app/?username=SingleDevelopers&theme=light)
+![Telegram Channel](https://telegram-card.malith.dev/?username=SingleDevelopers&theme=light)
 
-![Telegram Channel](https://telegram-card.vercel.app/?username=durov&theme=light)
+![Telegram Channel](https://telegram-card.malith.dev/?username=durov&theme=light)
 
 #### 🤖 Bot
-![Telegram Bot](https://telegram-card.vercel.app/?username=ReceiveSMSRobot&theme=light)
+![Telegram Bot](https://telegram-card.malith.dev/?username=ReceiveSMSRobot&theme=light)
 
 #### 👥 Group
-![Telegram Group](https://telegram-card.vercel.app/?username=SSH_Store&theme=light)
+![Telegram Group](https://telegram-card.malith.dev/?username=SSH_Store&theme=light)
 
-| ![Preivew Item](https://telegram-card.vercel.app/?username=AlphaV2ray&theme=light) | ![Preivew Item](https://telegram-card.vercel.app/?username=SingleMusicX) |
+| ![Preivew Item](https://telegram-card.malith.dev/?username=AlphaV2ray&theme=light) | ![Preivew Item](https://telegram-card.malith.dev/?username=SingleMusicX) |
 |------------|-----------|
-| ![Preivew Item](https://telegram-card.vercel.app/?username=QuizUpLK) | ![Preivew Item](https://telegram-card.vercel.app/?username=QuizUpLK) |
-| ![Preivew Item](https://telegram-card.vercel.app/?username=Auto_ReactionBOT&theme=light) | ![Preivew Item](https://telegram-card.vercel.app/?username=Alpha_V2ray) |
+| ![Preivew Item](https://telegram-card.malith.dev/?username=QuizUpLK) | ![Preivew Item](https://telegram-card.malith.dev/?username=QuizUpLK) |
+| ![Preivew Item](https://telegram-card.malith.dev/?username=Auto_ReactionBOT&theme=light) | ![Preivew Item](https://telegram-card.malith.dev/?username=Alpha_V2ray) |
 
 ## 📦 Getting Started
 

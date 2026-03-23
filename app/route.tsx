@@ -11,7 +11,7 @@
  * Copyright (c) 2025 Malith Rukshan
  * Licensed under the MIT License
  *
- * Demo: https://telegram-card.vercel.app/?username=SingleDevelopers
+ * Demo: https://telegram-card.malith.dev/?username=SingleDevelopers
  */
 
 'use server';
