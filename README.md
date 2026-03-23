@@ -97,7 +97,7 @@ Example usage for Github Profile : https://github.com/Malith-Rukshan#-connect-wi
 
 | ![Preivew Item](https://telegram-card.vercel.app/?username=AlphaV2ray&theme=light) | ![Preivew Item](https://telegram-card.vercel.app/?username=SingleMusicX) |
 |------------|-----------|
-| ![Preivew Item](https://telegram-card.vercel.app/?username=MOD_APPS_Stock) | ![Preivew Item](https://telegram-card.vercel.app/?username=QuizUpLK) |
+| ![Preivew Item](https://telegram-card.vercel.app/?username=QuizUpLK) | ![Preivew Item](https://telegram-card.vercel.app/?username=QuizUpLK) |
 | ![Preivew Item](https://telegram-card.vercel.app/?username=Auto_ReactionBOT&theme=light) | ![Preivew Item](https://telegram-card.vercel.app/?username=Alpha_V2ray) |
 
 ## 📦 Getting Started
