@@ -185,11 +185,11 @@
         }
         
         .color-picker {
-            width: 50px !important;
-            height: 44px !important;
-            padding: 0 !important;
-            border: 2px solid #e1e5e9 !important;
-            border-radius: 8px !important;
+            width: 50px;
+            height: 44px;
+            padding: 0;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
             cursor: pointer;
             background: none;
         }
@@ -497,14 +497,14 @@
             </div>
 
             <div class="form-group">
-                <label>Theme Presets</label>
+                <span>Theme Presets</span>
                 <div class="theme-presets">
-                    <button class="theme-preset active" data-preset="light">Light</button>
-                    <button class="theme-preset" data-preset="dark">Dark</button>
-                    <button class="theme-preset" data-preset="ocean">Ocean</button>
-                    <button class="theme-preset" data-preset="sunset">Sunset</button>
-                    <button class="theme-preset" data-preset="forest">Forest</button>
-                    <button class="theme-preset" data-preset="custom">Custom</button>
+                    <button type="button" class="theme-preset active" data-preset="light">Light</button>
+                    <button type="button" class="theme-preset" data-preset="dark">Dark</button>
+                    <button type="button" class="theme-preset" data-preset="ocean">Ocean</button>
+                    <button type="button" class="theme-preset" data-preset="sunset">Sunset</button>
+                    <button type="button" class="theme-preset" data-preset="forest">Forest</button>
+                    <button type="button" class="theme-preset" data-preset="custom">Custom</button>
                 </div>
             </div>
 
@@ -581,14 +581,14 @@
                 </div>
             </div>
 
-            <button class="generate-btn" onclick="generateCard()">🚀 Generate Card</button>
+            <button type="button" class="generate-btn" onclick="generateCard()">🚀 Generate Card</button>
 
             <div id="preview-section" class="preview-section">
                 <h3>Your Generated Card</h3>
                 <img id="preview-image" class="preview-image" alt="Generated card preview">
                 <div class="url-copy">
                     <input type="text" id="generated-url" class="url-input" readonly>
-                    <button class="copy-btn" onclick="copyUrl()">Copy URL</button>
+                    <button type="button" class="copy-btn" onclick="copyUrl()">Copy URL</button>
                 </div>
             </div>
         </div>
@@ -764,7 +764,7 @@
         // Theme preset handling
         document.querySelectorAll('.theme-preset').forEach(btn => {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.theme-preset').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.theme-preset').forEach(b => { b.classList.remove('active'); });
                 this.classList.add('active');
                 
                 const preset = this.dataset.preset;
@@ -790,7 +790,7 @@
             // Apply preset values
             Object.keys(preset).forEach(key => {
                 const input = document.getElementById(key);
-                const picker = document.getElementById(key + 'Picker');
+                const picker = document.getElementById(`${key}Picker`);
                 
                 if (input && preset[key] !== undefined) {
                     input.value = preset[key];
@@ -806,7 +806,7 @@
         function clearThemeInputs() {
             ['theme', 'bgColor', 'textColor', 'subtleTextColor', 'extraColor', 'shadowColor', 'fontFamily'].forEach(id => {
                 const input = document.getElementById(id);
-                const picker = document.getElementById(id + 'Picker');
+                const picker = document.getElementById(`${id}Picker`);
                 
                 if (input) {
                     input.value = '';
@@ -819,7 +819,7 @@
             });
         }
 
-        function toggleAdvanced() {
+        function _toggleAdvanced() {
             const options = document.getElementById('advanced-options');
             options.classList.toggle('show');
             
@@ -859,7 +859,7 @@
                 
                 advancedFields.forEach(field => {
                     const input = document.getElementById(field);
-                    if (input && input.value.trim()) {
+                    if (input?.value.trim()) {
                         params.append(field, input.value.trim());
                     }
                 });
@@ -874,7 +874,7 @@
             const previewImage = document.getElementById('preview-image');
             const urlInput = document.getElementById('generated-url');
             
-            previewImage.src = cardUrl + '&t=' + Date.now(); // Add timestamp to force reload
+            previewImage.src = `${cardUrl}&t=${Date.now()}`; // Add timestamp to force reload
             urlInput.value = cardUrl;
             previewSection.classList.add('show');
             
@@ -882,7 +882,7 @@
             previewSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-        function copyUrl() {
+        function _copyUrl() {
             const urlInput = document.getElementById('generated-url');
             const copyBtn = document.querySelector('.copy-btn');
             
@@ -899,7 +899,7 @@
         }
 
         // Handle Enter key in username input
-        document.getElementById('username').addEventListener('keypress', function(e) {
+        document.getElementById('username').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 generateCard();
             }
@@ -910,7 +910,7 @@
             const colorFields = ['bgColor', 'textColor', 'subtleTextColor', 'extraColor', 'shadowColor'];
             
             colorFields.forEach(field => {
-                const picker = document.getElementById(field + 'Picker');
+                const picker = document.getElementById(`${field}Picker`);
                 const textInput = document.getElementById(field);
                 
                 if (picker && textInput) {
@@ -934,13 +934,13 @@
         }
         
         function switchToCustomPreset() {
-            document.querySelectorAll('.theme-preset').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.theme-preset').forEach(b => { b.classList.remove('active'); });
             document.querySelector('[data-preset="custom"]').classList.add('active');
         }
         
         // Auto-switch to custom preset when advanced options are modified
         document.querySelectorAll('#advanced-options input:not(.color-picker), #advanced-options select').forEach(input => {
-            input.addEventListener('input', function() {
+            input.addEventListener('input', () => {
                 switchToCustomPreset();
             });
         });
