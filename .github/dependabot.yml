@@ -7,20 +7,11 @@ updates:
       day: "monday"
       time: "09:00"
       timezone: "UTC"
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 3
     groups:
-      react:
+      npm-all:
         patterns:
-          - "react"
-          - "react-dom"
-          - "@types/react"
-          - "@types/react-dom"
-      types:
-        patterns:
-          - "@types/*"
-      biome:
-        patterns:
-          - "@biomejs/*"
+          - "*"
     labels:
       - "dependencies"
     commit-message:
@@ -29,25 +20,21 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "UTC"
+      interval: "monthly"
+    groups:
+      github-actions-all:
+        patterns:
+          - "*"
     labels:
       - "dependencies"
-      - "github-actions"
     commit-message:
       prefix: "chore(deps)"
 
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-      timezone: "UTC"
+      interval: "monthly"
     labels:
       - "dependencies"
-      - "docker"
     commit-message:
       prefix: "chore(deps)"
