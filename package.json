@@ -11,8 +11,8 @@
 	"dependencies": {
 		"jsdom": "^26.1.0",
 		"next": "^16.2.6",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0"
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.1",
