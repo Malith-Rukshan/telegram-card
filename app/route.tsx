@@ -113,6 +113,22 @@ export async function GET(request: NextRequest) {
 						overflow: "hidden",
 					}}
 				>
+					{/* Subtle corner gradient for depth. Rendered first because Satori
+					    paints in document order and ignores z-index. */}
+					<div
+						style={{
+							position: "absolute",
+							right: 0,
+							bottom: 0,
+							width: "120px",
+							height: "120px",
+							borderRadius: "100% 0 0 0",
+							background: isDark
+								? "radial-gradient(circle at 100% 100%, rgba(0,136,204,0.1), transparent 70%)"
+								: "radial-gradient(circle at 100% 100%, rgba(0,136,204,0.05), transparent 70%)",
+						}}
+					/>
+
 					{/* Avatar section */}
 					<div
 						style={{
@@ -146,7 +162,6 @@ export async function GET(request: NextRequest) {
 							gap: "6px",
 							width: "100%",
 							position: "relative",
-							zIndex: 1,
 						}}
 					>
 						<div
@@ -240,21 +255,6 @@ export async function GET(request: NextRequest) {
 						</div>
 					</div>
 
-					{/* Subtle corner gradient for depth */}
-					<div
-						style={{
-							position: "absolute",
-							right: 0,
-							bottom: 0,
-							width: "120px",
-							height: "120px",
-							borderRadius: "100% 0 0 0",
-							background: isDark
-								? "radial-gradient(circle at 100% 100%, rgba(0,136,204,0.1), transparent 70%)"
-								: "radial-gradient(circle at 100% 100%, rgba(0,136,204,0.05), transparent 70%)",
-							zIndex: 0,
-						}}
-					/>
 				</div>
 			</div>,
 			{
