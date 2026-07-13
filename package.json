@@ -19,11 +19,11 @@
 		"ws": ">=8.20.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.2",
+		"@biomejs/biome": "^2.5.3",
 		"@types/jsdom": "^28.0.3",
 		"@types/node": "^26",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
-		"typescript": "^6"
+		"typescript": "^7"
 	}
 }
