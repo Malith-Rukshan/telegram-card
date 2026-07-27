@@ -9,9 +9,20 @@ updates:
       timezone: "UTC"
     open-pull-requests-limit: 3
     groups:
+      # Only patch/minor are grouped, so a grouped PR is never auto-merged with a
+      # major hiding inside it. Majors arrive as individual PRs for manual review.
       npm-all:
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      # TypeScript 7 is the native Go rewrite; its npm package no longer exposes
+      # the JS compiler API that `next build` needs. Stay on 6.x.
+      - dependency-name: "typescript"
+        update-types:
+          - "version-update:semver-major"
     labels:
       - "dependencies"
     commit-message:

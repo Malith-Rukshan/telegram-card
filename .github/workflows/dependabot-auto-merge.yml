@@ -1,8 +1,13 @@
 name: Dependabot Auto-merge
 
+# Triggered by CI completing rather than by the PR opening. `gh pr merge --auto`
+# only actually waits for checks when a branch protection rule marks them
+# required; with no protection configured it merges straight away, which is how
+# a red PR reached main. Gating on a successful CI run fails closed instead.
 on:
-  pull_request:
-    types: [opened]
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
 
 permissions:
   contents: write
@@ -12,19 +17,33 @@ jobs:
   auto-merge:
     name: Auto-merge patch & minor updates
     runs-on: ubuntu-latest
-    if: github.actor == 'dependabot[bot]'
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]'
     steps:
-      - uses: actions/checkout@v7
-
-      - name: Fetch Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v3
-
-      - name: Auto-merge patch and minor updates
-        if: |
-          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-          steps.metadata.outputs.update-type == 'version-update:semver-minor'
-        run: gh pr merge --auto --squash "$PR_URL"
+      - name: Merge if no major update is included
         env:
-          PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+
+          pr=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open \
+                --json number --jq '.[0].number // empty')
+          if [ -z "$pr" ]; then
+            echo "No open PR for branch $BRANCH; nothing to merge."
+            exit 0
+          fi
+
+          # Dependabot records the semver change of every bumped dependency in
+          # the commit message, including each entry of a grouped update.
+          if gh pr view "$pr" --repo "$REPO" --json commits \
+              --jq '.commits[].messageBody' | grep -q 'version-update:semver-major'; then
+            echo "PR #$pr contains a major update; leaving it for manual review."
+            exit 0
+          fi
+
+          echo "CI passed on PR #$pr and no major update is included; merging."
+          gh pr merge "$pr" --repo "$REPO" --squash

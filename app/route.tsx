@@ -254,7 +254,6 @@ export async function GET(request: NextRequest) {
 							</span>
 						</div>
 					</div>
-
 				</div>
 			</div>,
 			{
