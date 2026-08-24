@@ -22,7 +22,7 @@
 		"ws": ">=8.20.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.8",
+		"@biomejs/biome": "^2.5.9",
 		"@types/jsdom": "^28.0.3",
 		"@types/node": "^26",
 		"@types/react": "^19",
