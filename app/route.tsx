@@ -27,6 +27,20 @@ function sanitizeUsername(username: string): string {
 	return username.replace(/[^a-zA-Z0-9_]/g, " ");
 }
 
+// Query params are rendered into SVG styles by ImageResponse, so only accept
+// strict color/font formats (GHSA-vcvr-r3jv-pc5j / CVE-2026-94545).
+const COLOR_PATTERN =
+	/^(#[0-9a-fA-F]{3,8}|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*(,\s*(0|1|0?\.\d+)\s*)?\)|[a-zA-Z]{1,20})$/;
+const FONT_FAMILY_PATTERN = /^[a-zA-Z0-9 ,'-]{1,100}$/;
+
+function safeParam(
+	value: string | null,
+	pattern: RegExp,
+	fallback: string,
+): string {
+	return value && pattern.test(value) ? value : fallback;
+}
+
 export async function GET(request: NextRequest) {
 	let errorMessage = "Please check the username and try again";
 	try {
@@ -62,19 +76,36 @@ export async function GET(request: NextRequest) {
 		const result = await scrapeTelegram(sanitizedUsername);
 
 		// Theme-specific colors
-		const cardBgColor =
-			searchParams.get("bgColor") ||
-			(isDark ? "rgba(42, 42, 42, 1)" : "rgba(255, 255, 255, 1)");
-		const textColor =
-			searchParams.get("textColor") || (isDark ? "#ffffff" : "#000000");
-		const subtleTextColor =
-			searchParams.get("subtleTextColor") || (isDark ? "#AAAAAA" : "#666666");
-		const extraColor =
-			searchParams.get("extraColor") || (isDark ? "#8DD5FF" : "#3390D6");
-		const shadowColor =
-			searchParams.get("shadowColor") ||
-			(isDark ? "rgba(0,0,0,0.3)" : "rgba(0,0,0,0.06)");
-		const fontFamily = searchParams.get("fontFamily") || "Inter, sans-serif";
+		const cardBgColor = safeParam(
+			searchParams.get("bgColor"),
+			COLOR_PATTERN,
+			isDark ? "rgba(42, 42, 42, 1)" : "rgba(255, 255, 255, 1)",
+		);
+		const textColor = safeParam(
+			searchParams.get("textColor"),
+			COLOR_PATTERN,
+			isDark ? "#ffffff" : "#000000",
+		);
+		const subtleTextColor = safeParam(
+			searchParams.get("subtleTextColor"),
+			COLOR_PATTERN,
+			isDark ? "#AAAAAA" : "#666666",
+		);
+		const extraColor = safeParam(
+			searchParams.get("extraColor"),
+			COLOR_PATTERN,
+			isDark ? "#8DD5FF" : "#3390D6",
+		);
+		const shadowColor = safeParam(
+			searchParams.get("shadowColor"),
+			COLOR_PATTERN,
+			isDark ? "rgba(0,0,0,0.3)" : "rgba(0,0,0,0.06)",
+		);
+		const fontFamily = safeParam(
+			searchParams.get("fontFamily"),
+			FONT_FAMILY_PATTERN,
+			"Inter, sans-serif",
+		);
 
 		const headers = new Headers();
 		headers.set("Content-Type", "image/png");
