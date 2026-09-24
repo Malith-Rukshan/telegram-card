@@ -8,6 +8,15 @@ services:
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    # Hardening: immutable root filesystem, no Linux capabilities, no privilege escalation
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache:uid=1001,gid=1001
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     healthcheck:
       test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:3000/"]
       interval: 30s
